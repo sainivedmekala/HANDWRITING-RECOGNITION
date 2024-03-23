@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Handwriting to text converter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&display=swap');
+    </style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <a href="{{ url_for('main') }}" class="back-button">&lt; Back</a>
+  <section class="text-box1">
+        <h3>Handwriting to Text Converter</h3>
+        <hr>
+        <p>Click on the "Choose File" button to upload a file:</p>
+</section>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="file-upload">Choose an image:</label>
+    <input type="file" id="file-upload" name="image">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Upload">
+  </div>
+</form>
+</body>
+</html>

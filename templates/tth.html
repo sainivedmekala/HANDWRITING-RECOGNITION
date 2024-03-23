@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Text to handwriting converter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&display=swap');
+    </style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .message-box {
+			display: inline-block;
+			padding: 10px;
+			background-color: #f1f1f1;
+			border-radius: 4px;
+      border: 10px solid #000;
+			box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+			border: none;
+			resize: none;
+			font-size: 18px;
+			width: 800px;
+			height:450px;
+      text-align:left;
+		}
+</style>
+</head>
+<body>
+  <a href="{{ url_for('main') }}" class="back-button">&lt; Back</a>
+  <section class="text-box1">
+        <h3>Text To Handwriting Converter</h3>
+        <hr>
+        <p>Paste your text here:<br>(or)</p>
+</section>
+    <form action="/convert" method="POST">
+        <div class="form-group">
+            <label for="text">Enter your text:</label>
+            <textarea id="text" name="text" class="message-box"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Generate Handwriting PDF">
+        </div>
+	</form>
+</body>
+</html>
